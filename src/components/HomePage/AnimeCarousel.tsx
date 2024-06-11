@@ -20,7 +20,7 @@ export const AnimeCarousel = ({title,url}:Props) => {
         <h2>{title}</h2>
         {loading && <span>Cargando...</span>}
         {error && <span>Error!</span>}
-        <ul className='grid grid-cols-12'>
+        <ul className=''>
             {
                 data && data.data && data.data.map((anime:any)=>(
                     <li key={anime.mal_id}>
