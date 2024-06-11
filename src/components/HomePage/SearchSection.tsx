@@ -2,13 +2,21 @@
 import React, { FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 
-export const SearchSection = () => {
+interface Props {
+  isInSearch:boolean
+}
+
+export const SearchSection = ({isInSearch}:Props) => {
   const router = useRouter()
 
   const handleSubmit = (e:any) => {
     e.preventDefault()
     const query = e.target.query.value
-    router.push(`search/${query}`)
+    if(isInSearch){
+      router.replace(`${query}`)
+    }else{
+      router.push(`/search/${query}`)
+    }
   }
 
   return (

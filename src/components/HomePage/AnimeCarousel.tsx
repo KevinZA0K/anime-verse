@@ -2,7 +2,7 @@
 import { useFetch } from '@/hooks/useFetch'
 import { useRouter } from 'next/navigation'
 import React from 'react'
-
+import Cards from '../utils/Cards'
 
 interface Props {
     title: string
@@ -11,7 +11,6 @@ interface Props {
 
 export const AnimeCarousel = ({title,url}:Props) => {
     const router = useRouter()
-    console.log("Renderizando componente")
     const {data,loading,error} = useFetch(url)
 
   return (
@@ -23,10 +22,7 @@ export const AnimeCarousel = ({title,url}:Props) => {
         <ul className=''>
             {
                 data && data.data && data.data.map((anime:any)=>(
-                    <li key={anime.mal_id}>
-                        <img src={anime.images.jpg.image_url}></img>
-                        <h2>{anime.title}</h2>
-                    </li>
+                    <Cards title={anime.title} images={anime.images.jpg.image_url} key={anime.mal_id} mal_id={anime.mal_id}/>
                 ))
             }
         </ul>

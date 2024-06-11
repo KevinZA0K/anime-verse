@@ -5,7 +5,7 @@ import { AnimeGridsHomePage } from './AnimeGridsHomePage'
 export const HomePage = () => {
   return (
     <>
-        <SearchSection />
+        <SearchSection isInSearch={false}/>
         <AnimeGridsHomePage />
     </>
   )

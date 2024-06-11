@@ -8,7 +8,7 @@ export const Search = () => {
   const {query}:any = useParams()
   return (
     <>
-    <SearchSection />
+    <SearchSection isInSearch={true} />
     <SearchPage query={query} />
     </>
   )
