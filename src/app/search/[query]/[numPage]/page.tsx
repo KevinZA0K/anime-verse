@@ -5,11 +5,11 @@ import { useParams } from 'next/navigation'
 import React from 'react'
 
 export const Search = () => {
-  const {query}:any = useParams()
+  const {query, numPage}:any = useParams()
   return (
     <>
     <SearchSection isInSearch={true} />
-    <SearchPage query={query} />
+    <SearchPage query={query} page={numPage} />
     </>
   )
 }
