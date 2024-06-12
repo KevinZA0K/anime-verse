@@ -4,7 +4,7 @@ import {Menu} from "lucide-react"
 
 export const Header = () => {
   return (
-    <header className='flex justify-between border h-24 items-center px-12 xl:mx-12'>
+    <header className='flex justify-between border h-24 items-center px-12'>
     <span><Link href={"/"}>Animeverse</Link></span>
     <Menu className='md:hidden'/>
     <nav className='hidden md:block'>
