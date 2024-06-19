@@ -19,6 +19,7 @@ const AnimePage = ({ mal_id }:Props) => {
       {data && data.data && <h2>{data.data.title}</h2>}
       {data && data.data && <h3>{data.data.title_japanese}</h3>}
       {data && data.data && <img src={data.data.images.jpg.large_image_url} />}
+      {data && data.data && <p>{data.data.synopsis}</p>}
     </div>
   );
 };
