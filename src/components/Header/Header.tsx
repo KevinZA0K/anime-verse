@@ -6,6 +6,8 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '@/db/db'
 import { setUser } from '@/redux/features/authSlice'
+import AuthUser from './AuthUser'
+import SignOut from '../authUI/SignOut'
 
 export const Header = () => {
   const dispatch = useAppDispatch()
@@ -27,8 +29,9 @@ export const Header = () => {
     <Menu className='md:hidden'/>
     <nav className='hidden md:block'>
       <ul className='md:flex gap-12 hidden'> 
-        <li><Link href="/">Lists</Link></li>
-        <li>{isAuthenticated ? <Link href="/">{user}</Link>:<Link href="/">Log in</Link>}</li>
+        <li><Link href="/lists">Lists</Link></li>
+        {isAuthenticated ? <Link href="/">{user}</Link>:<AuthUser />}
+        <li>{isAuthenticated && <SignOut />}</li>
       </ul>
     </nav>
     </header>
