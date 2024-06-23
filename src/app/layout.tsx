@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} xl:px-12`}>
+      <body className={`${inter.className} px-6 xl:px-12`}>
         <AuthProvider>
           <Header />
           {children}

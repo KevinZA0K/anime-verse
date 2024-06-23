@@ -18,7 +18,6 @@ export const Header = () => {
     onAuthStateChanged(auth, currentUser =>{
       if(currentUser != null){
         dispatch(setUser(currentUser.email))
-        console.log("disparado")
       } 
     })
   },[dispatch])

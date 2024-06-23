@@ -1,7 +1,6 @@
 "use client"
 import { signUp } from '@/redux/features/authSlice'
 import { useAppDispatch } from '@/redux/hooks'
-import {useRouter} from "next/navigation"
 
 import React from 'react'
 
