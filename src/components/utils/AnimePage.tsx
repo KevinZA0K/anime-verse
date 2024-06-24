@@ -7,9 +7,12 @@ interface Props {
 }
 
 const AnimePage = ({ mal_id }: Props) => {
+
   const { data, error, loading } = useFetch(
     `https://api.jikan.moe/v4/anime/${mal_id}`
   );
+
+  console.log(data)
 
   return (
     <div>

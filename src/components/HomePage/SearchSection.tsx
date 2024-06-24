@@ -13,9 +13,9 @@ export const SearchSection = ({isInSearch}:Props) => {
     e.preventDefault()
     const query = e.target.query.value
     if(isInSearch){
-      router.replace(`${query}/1`)
+      router.replace(`?query=${query}&page=1`)
     }else{
-      router.push(`/search/${query}/1`)
+      router.push(`/search?query=${query}&page=1`)
     }
   }
 

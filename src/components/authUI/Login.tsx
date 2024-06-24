@@ -8,6 +8,7 @@ import React from 'react'
 export const Login = () => {
 
   const dispatch = useAppDispatch()
+  const router = useRouter()
 
   const handleSubmit = async (e:any) => {
     e.preventDefault()
@@ -15,7 +16,7 @@ export const Login = () => {
     const password = e.target.password.value
     try{
       await dispatch(signIn({email,password}))
-      
+      router.push('/')
     }catch(e:any) {
       console.log(e.message)
     }

@@ -12,7 +12,6 @@ export const addData = async ({collectionName, data}:Props) => {
         const docRef = await addDoc(collection(db,collectionName), {
             data    
         })
-        console.log("data creada")
     }catch(e){
         console.log("error: ", e)
     }
